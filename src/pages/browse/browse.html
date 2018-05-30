@@ -16,40 +16,49 @@
 
 <ion-content padding>
 
-    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
     <ion-list>
       <ion-item *ngFor="let item of items">
         {{ items }}
       </ion-item>
-    </ion-list>
-    
-    <ion-list>
-        <ion-list-header>
-          Children
-        </ion-list-header>
-        <ion-item>
-            <ion-avatar item-start>
-                <img src="/assets/chailifeline.jpg">
-              </ion-avatar>
-              <h2><button align="left" ion-button clear (click)="navigateTocharitydetails()"><b>Chai Lifeline</b></button></h2>
-              <h3>Fighting Illness with Love</h3>
-              <p>Chai Lifeline has grown from a small, community-based summer camp program for children with cancer to one of the preeminent international health support networks supporting seriously ill children, their families, and communities.
-          </ion-item>
-        <ion-item>
-            <ion-avatar item-start>
-                <img src="/assets/unitedhatz.png">
-              </ion-avatar>
-              <h2>United Hatzalah</h2>
-              <h3>When Seconds Count...</h3>
-              <p>United Hatzalah is a free, volunteer-based emergency medical services (EMS) organization based in Jerusalem. </ion-item>
-        <ion-item><ion-avatar item-start>
-            <img src="/assets/kolhanearim.png">
-          </ion-avatar>
-          <h2>Kol Hanearim</h2>
-          <h3>It's easier to believe in yourself when others believe in you. </h3>
-          <p>Kol HaNearim (KH) strives to care for some of the most vulnerable members of the global community: orphans and children at risk.
-          </ion-item>
-      </ion-list>
+    </ion-list> -->
+
+  <ion-list>
+    <ion-list-header>
+      Children
+    </ion-list-header>
+    <button ion-button clear (click)="navigateTocharitydetails(0)">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="/assets/chailifeline.jpg">
+        </ion-avatar>
+        <h2>Chai Lifeline</h2>
+        <h3>Fighting Illness with Love</h3>
+
+      </ion-item>
+    </button>
+    <button ion-button clear (click)="navigateTocharitydetails(1)">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="/assets/unitedhatz.png">
+        </ion-avatar>
+        <h2>United Hatzalah</h2>
+        <h3>When Seconds Count...</h3>
+        
+
+      </ion-item>
+    </button>
+    <button ion-button clear (click)="navigateTocharitydetails(2)">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="/assets/kolhanearim.png">
+      </ion-avatar>
+      <h2>Kol Hanearim</h2>
+      <h3>It's easier to believe in yourself when oth... </h3>
+     
+    </ion-item>
+  </button>
+  </ion-list>
 
 
 </ion-content>

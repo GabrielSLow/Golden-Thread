@@ -16,7 +16,14 @@ import { BrowsePage} from '../browse/browse'
 })
 export class CharitydetailsPage {
 
+  name: string;
+  slogan: string;
+  description: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.name = navParams.get("name");
+    this.slogan = navParams.get("slogan");
+    this.description = navParams.get("description");
   }
 
   ionViewDidLoad() {

@@ -20,6 +20,11 @@ items = [
 {name: "United Hatzalah", slogan: "When Seconds Count...", description: "United Hatzalah is a free, volunteer-based emergency medical services (EMS) organization based in Jerusalem."},
 {name: "Kol Hanearim", slogan: "It's easier to believe in yourself when others believe in you.", description: "Kol HaNearim (KH) strives to care for some of the most vulnerable members of the global community: orphans and children at risk."}
 ]
+
+name: string;
+slogan: string;
+description: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
  this.initializeItems();
  
@@ -27,10 +32,6 @@ items = [
 
   
   initializeItems() {
-this.items= [
-
-
-];
 
 
   }
@@ -49,9 +50,10 @@ this.items= [
     console.log('ionViewDidLoad BrowsePage');
   }
 
-  navigateTocharitydetails() {
-    this.navCtrl.push(CharitydetailsPage,{
-      name: this.name, slogan: this.slogan, description: this.description}
+  navigateTocharitydetails(num: number) {
+    this.navCtrl.push(CharitydetailsPage
+      ,{
+      name: this.items[num].name, slogan: this.items[num].slogan, description: this.items[num].description}
     );
   }
 }
