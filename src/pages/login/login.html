@@ -1,22 +1,37 @@
 <ion-header>
     <ion-navbar>
         <ion-title>
-            Profile Page
-        </ion-title>
+{{ username }}
+</ion-title>
+        
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+
+
+<ion-content>
+        <br> 
     <div align="center">
-    <ion-img width="150" height="150" src="/assets/profile placeholder.jpg"></ion-img>
+    <ion-img width="125" height="125" src="/assets/gabriellow.jpg"></ion-img>
     </div> 
     
+    <HR>
         <ion-content>
                 <ion-item-group>
+                        <ion-item-divider color="primary">Personal</ion-item-divider>
+                        <ion-item>Portfolio</ion-item> 
+                        <ion-item>Payment Details</ion-item>
+                        
+                    </ion-item-group>
+                <ion-item-group>
                         <ion-item-divider color="secondary">Organizations</ion-item-divider>
-                        <ion-item>Favorites</ion-item> 
-                        <ion-item>Impact</ion-item>
-                        <ion-item>What's new?</ion-item>
+                        <ion-item> <button ion-button full clear (click)="navigateTobrowse()">Browse
+                        </button>
+                            </ion-item>
+                        <ion-item> <button ion-button full clear (click)="navigateTobrowse()">Favorites
+                            </button>
+                        </ion-item> 
+                        <ion-item><button ion-button full clear (click)="navigateTobrowse()">Impact</button></ion-item>
                     </ion-item-group>
             <ion-item-group>
                 <ion-item-divider color="danger">Preferences</ion-item-divider>

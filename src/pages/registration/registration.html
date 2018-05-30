@@ -1,17 +1,10 @@
 <ion-header>
     <ion-navbar>
         <ion-title>
-            Join Us!
+            Register Now!
         </ion-title>
     </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-    <p>
-        Register Now!
-    </p>
-
-</ion-content>
 
 <ion-content>
     <ion-list>
@@ -36,13 +29,28 @@
             <ion-input type="Password"></ion-input>
         </ion-item>
 
-        <ion-item>
-            <ion-label floating>Payment Details</ion-label>
-            <ion-input type="Payment Details"></ion-input>
-        </ion-item>
+        <HR>
+            <ion-item-divider color="danger">Payment Details</ion-item-divider>
 
         <ion-item>
-            <button ion-button (click)="navigateTohome()">Register!</button>
+            <ion-label floating>Name on Card</ion-label>
+            <ion-input type="Name on Card"></ion-input>
+        </ion-item>
+        <ion-item>
+                <ion-label floating>Card Number</ion-label>
+                <ion-input type="Card Number"></ion-input>
+            </ion-item>
+            <ion-item>
+                    <ion-label floating>MM/YY</ion-label>
+                    <ion-input type="MM/YY"></ion-input>
+                </ion-item>
+                <ion-item>
+                        <ion-label floating>CVC</ion-label>
+                        <ion-input type=CVC></ion-input>
+                    </ion-item>
+
+        <ion-item>
+            <button ion-button (click)="navigateTohome()">Submit</button>
         </ion-item>
     </ion-list>
 </ion-content>

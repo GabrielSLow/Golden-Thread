@@ -10,16 +10,22 @@ import { RegisterPage } from '../registration/registration';
 })
 export class HomePage {
 
+  username: string;
+
+
   constructor(public navCtrl: NavController) {
+
+ 
 
   }
 navigateTologin () {
-this.navCtrl.push(LoginPage);
+this.navCtrl.push(LoginPage, {
+  username: this.username
+});
 }
-
+ 
 navigateToregister () {
 this.navCtrl.push(RegisterPage);
 }
-
 
 }

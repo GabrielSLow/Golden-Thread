@@ -8,13 +8,19 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/registration/registration';
+import { BrowsePage } from '../pages/browse/browse';
+import { CharitydetailsPage } from '../pages/charitydetails/charitydetails';
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    BrowsePage,
+    CharitydetailsPage,
+    
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,11 @@ import { RegisterPage } from '../pages/registration/registration';
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    BrowsePage,
+    CharitydetailsPage,
+    
+
   ],
   providers: [
     StatusBar,

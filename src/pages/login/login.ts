@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { HomePage} from '../home/home'
+import { BrowsePage} from '../browse/browse'
 
 @Component({
   selector: 'page-login',
@@ -8,11 +9,28 @@ import { HomePage} from '../home/home'
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController) {
+  public username: string;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.username = navParams.get("username");
   }
 
   navigateTohome () {
     this.navCtrl.push(HomePage);
   }
+
+  navigateTobrowse () {
+    this.navCtrl.push(BrowsePage);
+  }
+  ionViewDidLoad() {
+    console.log("ionViewDidLoad LoginPage");
+  }
+
+  home() {
+    // Our username (on this) should have data from the user
+    this.navCtrl.push(LoginPage, {
+      username: this.username
+    });
+  }
 }
+
