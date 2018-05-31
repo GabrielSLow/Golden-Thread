@@ -10,6 +10,8 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/registration/registration';
 import { BrowsePage } from '../pages/browse/browse';
 import { CharitydetailsPage } from '../pages/charitydetails/charitydetails';
+import { DonationsPage } from '../pages/donations/donations';
+import { PaymentPage } from '../pages/payment/payment'
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { CharitydetailsPage } from '../pages/charitydetails/charitydetails';
     RegisterPage,
     BrowsePage,
     CharitydetailsPage,
+    DonationsPage,
+    PaymentPage,
     
   ],
   imports: [
@@ -34,6 +38,8 @@ import { CharitydetailsPage } from '../pages/charitydetails/charitydetails';
     RegisterPage,
     BrowsePage,
     CharitydetailsPage,
+    DonationsPage,
+    PaymentPage,
     
 
   ],

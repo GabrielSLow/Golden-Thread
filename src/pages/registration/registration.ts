@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { HomePage} from '../home/home'
+import { LoginPage } from '../login/login'
+import { PaymentPage } from '../payment/payment'
+
 
 
 @Component({
@@ -9,10 +11,19 @@ import { HomePage} from '../home/home'
 })
 export class RegisterPage {
 
+  desiredamountpledged: string;
+  username: string;
 
   constructor(public navCtrl: NavController) {
   }
-  navigateTohome () {
-    this.navCtrl.push(HomePage);
+  navigateTologin() {
+    this.navCtrl.push(LoginPage, {desiredamountpledged: this.desiredamountpledged, username: this.username
+    });
   }
+
+  navigateTopayment() {
+    this.navCtrl.push(PaymentPage, {
+      desiredamountpledged: this.desiredamountpledged
+    });
   }
+}

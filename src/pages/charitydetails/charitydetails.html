@@ -17,12 +17,24 @@
     <ion-title>
         {{name}}
       </ion-title>
-      <p>
+      <p align="center">
         {{slogan}}
       </p>
       
-        <p>
+        <ion-title align="left"> 
+          Description
+        </ion-title><p> 
           {{description}}
         </p>
+
+        <ion-title align="left"> 
+          Contact Us
+        </ion-title>
+        <p> 
+          {{contactus}}
+        </p>
        
+        <ion-item align="center"> <button ion-button (click)="navigateTopayment()">Donate Now!
+          </button>
+          </ion-item>
 </ion-content>

@@ -20,9 +20,9 @@
         </ion-item>
 
         <ion-item>
-            <ion-label floating>Username</ion-label>
-            <ion-input type="Username"></ion-input>
-        </ion-item>
+                <ion-label floating>Username</ion-label>
+                <ion-input type="username" [(ngModel)]="username"></ion-input>
+              </ion-item>
 
         <ion-item>
             <ion-label floating>Password</ion-label>
@@ -30,7 +30,11 @@
         </ion-item>
 
         <HR>
-            <ion-item-divider color="danger">Payment Details</ion-item-divider>
+            <ion-item-divider color="danger">Billing Info</ion-item-divider>
+            <ion-item>
+                    <ion-label floating>Desired Amount Pledged</ion-label>
+                    <ion-input type="desiredamountpledged" [(ngModel)]="desiredamountpledged"></ion-input>
+                  </ion-item>
 
         <ion-item>
             <ion-label floating>Name on Card</ion-label>
@@ -50,7 +54,12 @@
                     </ion-item>
 
         <ion-item>
-            <button ion-button (click)="navigateTohome()">Submit</button>
+            <button ion-button (click)="navigateTologin()">Submit</button>
+            <div>
+                    <a ion-button (click)="navigateTopayment()">Payment Details
+            
+                    </a>
+                </div>
         </ion-item>
     </ion-list>
 </ion-content>

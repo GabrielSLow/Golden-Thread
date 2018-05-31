@@ -16,14 +16,15 @@ import { CharitydetailsPage } from '../charitydetails/charitydetails'
 })
 export class BrowsePage {
 items = [
-{name: "Chai Lifeline", slogan: "Fighting Illness with Love", description: "Chai Lifeline has grown from a small, community-based summer camp program for children with cancer to one of the preeminent international health support networks supporting seriously ill children, their families, and communities."},
-{name: "United Hatzalah", slogan: "When Seconds Count...", description: "United Hatzalah is a free, volunteer-based emergency medical services (EMS) organization based in Jerusalem."},
-{name: "Kol Hanearim", slogan: "It's easier to believe in yourself when others believe in you.", description: "Kol HaNearim (KH) strives to care for some of the most vulnerable members of the global community: orphans and children at risk."}
+{name: "Chai Lifeline", slogan: "Fighting Illness with Love", description: "Chai Lifeline has grown from a small, community-based summer camp program for children with cancer to one of the preeminent international health support networks supporting seriously ill children, their families, and communities.", contactus: "info@chailifeline.org"},
+{name: "United Hatzalah", slogan: "When Seconds Count...", description: "United Hatzalah is a free, volunteer-based emergency medical services (EMS) organization based in Jerusalem.", contactus: "office@unitedhatzalah.org"},
+{name: "Kol Hanearim", slogan: "It's easier to believe in yourself when others believe in you.", description: "Kol HaNearim (KH) strives to care for some of the most vulnerable members of the global community: orphans and children at risk.", contactus: "summerprograms@kolhanearim.org"}
 ]
 
 name: string;
 slogan: string;
 description: string;
+contactus: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
  this.initializeItems();
@@ -53,7 +54,7 @@ description: string;
   navigateTocharitydetails(num: number) {
     this.navCtrl.push(CharitydetailsPage
       ,{
-      name: this.items[num].name, slogan: this.items[num].slogan, description: this.items[num].description}
+      name: this.items[num].name, slogan: this.items[num].slogan, description: this.items[num].description, contactus: this.items[num].contactus}
     );
   }
 }

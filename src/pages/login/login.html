@@ -10,17 +10,32 @@
 
 
 <ion-content>
+        <p padding>
+              </p>
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                        <div align="left">
+                                <ion-img width="125" height="125" src="/assets/gabriellow.jpg"></ion-img> </div>
+                  </ion-col>
+                  <ion-col>
+                    <div>Desired Amount Pledged
+                            <ion-item> 
+                                    $ {{ desiredamountpledged }}
+                                         </ion-item>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
         <br> 
-    <div align="center">
-    <ion-img width="125" height="125" src="/assets/gabriellow.jpg"></ion-img>
-    </div> 
-    
+   
+
     <HR>
         <ion-content>
                 <ion-item-group>
                         <ion-item-divider color="primary">Personal</ion-item-divider>
-                        <ion-item>Portfolio</ion-item> 
-                        <ion-item>Payment Details</ion-item>
+                        <ion-item><button ion-button full clear (click)="navigateTodonations()">Portfolio</button></ion-item> 
+                        <ion-item><button ion-button full clear (click)="navigateTopayment()">Payment Details</button></ion-item>
                         
                     </ion-item-group>
                 <ion-item-group>
@@ -45,6 +60,6 @@
     <div>
         <button ion-button (click)="navigateTohome()">Sign Out
 
-        </button>
-    </div>
+        </button> </div>
+        
 </ion-content>
