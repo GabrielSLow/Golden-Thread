@@ -49,4 +49,8 @@ import { PaymentPage } from '../pages/payment/payment'
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule {
+
+}
+
+

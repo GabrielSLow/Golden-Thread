@@ -1,10 +1,16 @@
 import { Component, ViewChild } from '@angular/core';
-import {
+import { IonicPage,
   NavController,
   NavParams
 } from 'ionic-angular';
-import { Chart } from '../../../node_modules/chart.js';
 
+
+import { Chart } from '../../../node_modules/chart.js';
+import { MyCharity } from '../../models/myCharity';
+import { Slice } from '../../models/slice';
+import { User } from '../../models/user';
+import { Charity } from '../../models/CharityProfile';
+import { SlicePipe } from '@angular/common';
 
 /**
  * Generated class for the DonationsPage page.
@@ -18,10 +24,47 @@ import { Chart } from '../../../node_modules/chart.js';
   templateUrl: 'donations.html',
 })
 export class DonationsPage {
+
+  public user: User = new User();
+  public charity: Charity = new Charity();
+  public technologies: Array<Slice> = [];
+  public amount: number = 0;
+  
+
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams) {
+    
+    this.user = this.navParams.get("user");
+    let colorArr: Array<string> = ["rgb(128,0,0)", "rgb(220,20,60)", "rgb(255,0,0)", "rgb(255,127,80)", "rgb(205,92,92)", "rgb(255,165,0)", "rgb(255,215,0)", "rgb(128,128,0)", "rgb(154,205,50)", "rgb(85,107,47)", "rgb(124,252,0)", "rgb(144,238,144)", "rgb(143,188,143)", "rgb(47,79,79)", "rgb(0,139,139)", "rgb(0,255,255)", "rgb(224,255,255)", "rgb(70,130,180)", "rgb(30,144,255)", "rgb(25,25,112)"];
+
+    if (this.navParams.get('amount')) {
+      this.amount = this.navParams.get('amount');
+    }
+
+    if (this.navParams.get('charity')) {
+      this.charity = this.navParams.get('charity');
+
+      let newCharity = new MyCharity();
+      newCharity.id = this.charity.id;
+      newCharity.name = this.charity.name;
+
+      this.user.myCharities.push(newCharity);
+
+    }
+    for(let i = 0; i < this.user.myCharities.length; i++) {
+      let newSlice = new Slice();
+      newSlice.technology = this.user.myCharities[i].name;
+      newSlice.time = this.user.myCharities[i].percentage;
+      newSlice.color = colorArr[i];
+      this.technologies.push(newSlice);
+    }
+  }
+
+
+
   @ViewChild('pieChart') pieChart;
   @ViewChild('barChart') barChart;
   @ViewChild('lineChart') lineChart;
-
 
   public charities: any = {
     "charities": [
@@ -60,10 +103,6 @@ export class DonationsPage {
   public chartColours: any = [];
   public chartHoverColours: any = [];
   public chartLoadingEl: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-
-  }
 
   ionViewDidLoad() {
     this.defineChartData();
@@ -72,7 +111,12 @@ export class DonationsPage {
     this.createLineChart();
   }
 
-
+  update() {
+    this.navCtrl.push(DonationsPage, {
+      user: this.user,
+      amount: this.amount
+    });
+  }
 
 
   /**
@@ -81,6 +125,8 @@ export class DonationsPage {
    * each chart
    *
    */
+
+  
   defineChartData(): void {
     let k: any;
 
@@ -110,7 +156,7 @@ export class DonationsPage {
         data: {
           labels: this.chartLabels,
           datasets: [{
-            label: 'Daily Technology usage',
+            label: 'Donation Breakdown',
             data: this.chartValues,
             duration: 2000,
             easing: 'easeInQuart',

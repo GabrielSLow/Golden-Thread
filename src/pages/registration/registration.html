@@ -30,29 +30,26 @@
         </ion-item>
 
         <HR>
-            <ion-item-divider color="danger">Billing Info</ion-item-divider>
+            <ion-item-divider color="danger">Billing Information</ion-item-divider>
             <ion-item>
                     <ion-label floating>Desired Amount Pledged</ion-label>
                     <ion-input type="desiredamountpledged" [(ngModel)]="desiredamountpledged"></ion-input>
                   </ion-item>
-
         <ion-item>
-            <ion-label floating>Name on Card</ion-label>
-            <ion-input type="Name on Card"></ion-input>
-        </ion-item>
-        <ion-item>
-                <ion-label floating>Card Number</ion-label>
-                <ion-input type="Card Number"></ion-input>
-            </ion-item>
-            <ion-item>
-                    <ion-label floating>MM/YY</ion-label>
-                    <ion-input type="MM/YY"></ion-input>
-                </ion-item>
-                <ion-item>
-                        <ion-label floating>CVC</ion-label>
-                        <ion-input type=CVC></ion-input>
-                    </ion-item>
-
+                      <ion-input type="text" placeholder="Billing Address"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-input type="text" placeholder="Credit Card Number"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-input type="date" placeholder="Expiration Date"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-input type="text" placeholder="CVC"></ion-input>
+                  </ion-item>
+              
+          </ion-list>
+      
         <ion-item>
             <button ion-button (click)="navigateTologin()">Submit</button>
             <div>
@@ -61,6 +58,6 @@
                     </a>
                 </div>
         </ion-item>
-    </ion-list>
+ 
 </ion-content>
 

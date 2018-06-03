@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, App } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { RegisterPage } from '../registration/registration';
 
@@ -13,19 +13,28 @@ export class HomePage {
   username: string;
 
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private app: App) {
 
- 
+
 
   }
-navigateTologin () {
-this.navCtrl.push(LoginPage, {
-  username: this.username
-});
-}
- 
-navigateToregister () {
-this.navCtrl.push(RegisterPage);
-}
+
+
+
+  navigateTologin() {
+
+    this.navCtrl.setRoot(LoginPage, {
+      username: this.username
+    });
+
+  }
+
+  navigateToregister() {
+    this.navCtrl.push(RegisterPage);
+  }
+
+  logout () {
+    this.app.getRootNav().setRoot(LoginPage);
+  }
 
 }
