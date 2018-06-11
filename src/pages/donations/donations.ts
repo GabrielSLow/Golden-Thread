@@ -33,8 +33,12 @@ export class DonationsPage {
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams) {
-    
-    this.user = this.navParams.get("user");
+    alert(this.navParams.get('user'));
+
+    if (this.navParams.get('user')) {
+      this.user = this.navParams.get('user');
+    }
+
     let colorArr: Array<string> = ["rgb(128,0,0)", "rgb(220,20,60)", "rgb(255,0,0)", "rgb(255,127,80)", "rgb(205,92,92)", "rgb(255,165,0)", "rgb(255,215,0)", "rgb(128,128,0)", "rgb(154,205,50)", "rgb(85,107,47)", "rgb(124,252,0)", "rgb(144,238,144)", "rgb(143,188,143)", "rgb(47,79,79)", "rgb(0,139,139)", "rgb(0,255,255)", "rgb(224,255,255)", "rgb(70,130,180)", "rgb(30,144,255)", "rgb(25,25,112)"];
 
     if (this.navParams.get('amount')) {
@@ -43,7 +47,8 @@ export class DonationsPage {
 
     if (this.navParams.get('charity')) {
       this.charity = this.navParams.get('charity');
-
+      alert(this.navParams.get('charity'))
+      alert(this.charity)
       let newCharity = new MyCharity();
       newCharity.id = this.charity.id;
       newCharity.name = this.charity.name;

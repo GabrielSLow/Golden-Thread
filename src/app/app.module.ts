@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -12,6 +13,7 @@ import { BrowsePage } from '../pages/browse/browse';
 import { CharitydetailsPage } from '../pages/charitydetails/charitydetails';
 import { DonationsPage } from '../pages/donations/donations';
 import { PaymentPage } from '../pages/payment/payment'
+import { IntegtutorialPage } from '../pages/integtutorial/integtutorial';
 
 
 @NgModule({
@@ -24,10 +26,12 @@ import { PaymentPage } from '../pages/payment/payment'
     CharitydetailsPage,
     DonationsPage,
     PaymentPage,
+    IntegtutorialPage,
     
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -40,6 +44,7 @@ import { PaymentPage } from '../pages/payment/payment'
     CharitydetailsPage,
     DonationsPage,
     PaymentPage,
+    IntegtutorialPage,
     
 
   ],

@@ -22,6 +22,7 @@ export class CharitydetailsPage {
   description: string;
   contactus: string;
 
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.name = navParams.get("name");
     this.slogan = navParams.get("slogan");

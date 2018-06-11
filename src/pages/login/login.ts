@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { HomePage} from '../home/home';
-import { BrowsePage} from '../browse/browse';
-import { DonationsPage} from '../donations/donations';
+import { HomePage } from '../home/home';
+import { DonationsPage } from '../donations/donations';
 import { PaymentPage } from '../payment/payment'
+import { Http, Headers } from "@angular/http";
 
 @Component({
   selector: 'page-login',
@@ -12,20 +12,25 @@ import { PaymentPage } from '../payment/payment'
 export class LoginPage {
 
   public username: string;
+  public password: string;
   public desiredamountpledged: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  cards: any;
+    category: string = 'gear';
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
     this.username = navParams.get("username");
     this.desiredamountpledged = navParams.get("desiredamountpledged");
+    this.cards = new Array(10);
   }
 
   navigateTohome () {
     this.navCtrl.push(HomePage);
   }
 
-  navigateTobrowse () {
-    this.navCtrl.push(BrowsePage);
-  }
+  // navigateTobrowse () {
+  //   this.navCtrl.push(BrowsePage);
+  // }
 
   navigateTodonations () {
     this.navCtrl.push(DonationsPage);
@@ -45,5 +50,7 @@ export class LoginPage {
       desiredamountpledged: this.desiredamountpledged
     });
   }
+
+  
 }
 

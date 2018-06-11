@@ -11,12 +11,12 @@
 
         <ion-item>
             <ion-label floating>Email</ion-label>
-            <ion-input type="Email"></ion-input>
+            <ion-input type="email" [(ngModel)]="email"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label floating>Phone Number</ion-label>
-            <ion-input type="Phone Number"></ion-input>
+            <ion-input type="phonenumber" [(ngModel)]="phonenumber"></ion-input>
         </ion-item>
 
         <ion-item>
@@ -26,9 +26,15 @@
 
         <ion-item>
             <ion-label floating>Password</ion-label>
-            <ion-input type="Password"></ion-input>
+            <ion-input type="password" [(ngModel)]="password"></ion-input>
         </ion-item>
 
+        <ion-item>
+            <button ion-button (click)="navigateTologin()">Submit</button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+<!-- 
         <HR>
             <ion-item-divider color="danger">Billing Information</ion-item-divider>
             <ion-item>
@@ -57,7 +63,7 @@
             
                     </a>
                 </div>
-        </ion-item>
+        </ion-item> -->
  
-</ion-content>
+
 

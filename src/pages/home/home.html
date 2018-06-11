@@ -22,13 +22,13 @@
 
     <ion-item>
       <ion-label floating>Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
 
   </ion-list>
 
   Already a member?
-  <button ion-button (click)="navigateTologin()">Sign In
+  <button ion-button (click)="login()">Sign In
 
   </button>
   <div>
@@ -36,6 +36,10 @@
     <a ion-button (click)="navigateToregister()">Register!</a>
   </div>
 
+  <div>
+   Integration
+    <a ion-button (click)="navigateTointegtutorial()">Integrate!</a>
+  </div>
   <HR>
  
   <div align="center"> 
